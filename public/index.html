@@ -1,0 +1,14 @@
+<button onclick="post()">click me</button>
+<img src="temp/result.png" />
+
+<script>
+
+async function post() {
+    const url = '/composite-image'
+    fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        // mode: 'cors', // no-cors, *cors, same-origin
+    });
+}
+
+</script>

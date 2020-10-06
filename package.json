@@ -1,0 +1,21 @@
+{
+  "name": "MoSt-composite-presentation-image",
+  "version": "1.0.0",
+  "description": "Motion Storyline composite presentation image API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "docker run --publish 8000:8000 --detach most-composite",
+    "build-local": "docker build --tag most-composite ."
+  },
+  "keywords": [],
+  "author": "Eben Mallory - Motion Storyline",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "puppeteer": "^5.3.1"
+  }
+}
