@@ -37,12 +37,13 @@ app.post("/composite-image", async (request, response) => {
     }, themeScript);
     // Writes the actual file
     const screenShot = await page.screenshot({
+        // We can use png transparency around the edges since we will have a rounded border
         omitBackground: true,
         path:`public/temp/result.png`
     });
     // Sends encoded version back to the website
     await response.send(screenShot);
-    await browser.close();
+    browser.close();
 });
 
 const port = process.env.PORT || 8000;

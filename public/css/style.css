@@ -1,0 +1,126 @@
+/*  https://web.dev/one-line-layouts/ // I consider this a great resource, and almost CSS framework: */
+
+.ex1 .parent {
+    display: grid;
+    place-items: center;
+    }
+.ex2 .parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+.ex2 .box {
+flex: 1 1 150px; /*  Stretching: */
+flex: 0 1 150px; /*  No stretching: */
+margin: 5px;
+}
+.ex3 .parent {
+display: grid;
+grid-template-columns: minmax(150px, 25%) 1fr;
+}
+.ex4 .parent {
+display: grid;
+grid-template-rows: auto 1fr auto;
+}
+.ex5 .parent {
+display: grid;
+grid-template: auto 1fr auto / auto 1fr auto;
+}
+.ex5 header {
+padding: 2rem;
+grid-column: 1 / 4;
+}
+.ex5 .left-side {
+grid-column: 1 / 2;
+}
+.ex5 main {
+grid-column: 2 / 3;
+}
+.ex5 .right-side {
+grid-column: 3 / 4;
+}
+.ex5 footer {
+grid-column: 1 / 4;
+}
+.ex6 .parent {
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+}
+.ex6 .span-12 {
+grid-column: 1 / span 12;
+}
+.ex6 .span-6 {
+grid-column: 1 / span 6;
+}
+.ex6 .span-4 {
+grid-column: 4 / span 4;
+}
+.ex6 .span-2 {
+grid-column: 3 / span 2;
+}
+/* centering text */
+.ex6 .section {
+display: grid;
+place-items: center;
+text-align: center
+}
+.ex7 .parent {
+display: grid;
+grid-gap: 1rem;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.ex8 .parent {
+height: auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+.ex8 .visual {
+height: 100px;
+width: 100%;
+}
+.ex8 .card {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.ex8 h3 {
+margin: 0
+}
+.ex9 .parent {
+display: grid;
+place-items: center;
+}
+.ex9 .card {
+width: clamp(23ch, 50%, 46ch);
+display: flex;
+flex-direction: column;
+padding: 1rem;
+}
+.ex9 .visual {
+height: 125px;
+width: 100%;
+}
+.ex10 .parent {
+display: grid;
+place-items: center;
+}
+.ex10 .visual {
+aspect-ratio: 16 / 9;
+}
+.ex10 .card {
+width: 50%;
+display: flex;
+flex-direction: column;
+padding: 1rem;
+}
+img {
+    max-width: 100%;
+}
+.overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+}
