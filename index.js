@@ -31,6 +31,16 @@ app.post("/composite-image", async (request, response) => {
     themeScript = themeScript.concat(`
         document.querySelector('.background').style.background = "${request.body.color}";
     `)
+    if (request.body.leftFile) {
+        themeScript = themeScript.concat(`
+            document.querySelector('img#upper').src = "${request.body.leftFile}";
+        `)
+    }
+    if (request.body.rightFile) {
+        themeScript = themeScript.concat(`
+            document.querySelector('img#lower').src = "${request.body.rightFile}";
+        `)
+    }
     await page.evaluate(javascript => {
         const script = document.createElement('script');
         script.type = 'text/javascript';
@@ -38,6 +48,11 @@ app.post("/composite-image", async (request, response) => {
         script.setAttribute("id", "script");
         document.body.parentElement.appendChild(script);
     }, themeScript);
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+    // Extra time padding for remote images to load in
+    await sleep(1000);
     await page.setViewport({
         width: 800,
         height: 1000,
