@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
+const subProcessor = require('./puppeteer-sub-process.js')
 
 // Fire up our API and backend framework
 const app = express();
@@ -31,6 +32,10 @@ app.post("/composite-image", async (request, response) => {
     themeScript = themeScript.concat(`
         document.querySelector('.background').style.background = "${request.body.color}";
     `)
+    if (request.body.url) {
+        imageURLSnaphostScript = await subProcessor.process(request);
+        themeScript = themeScript.concat(imageURLSnaphostScript);
+    }
     if (request.body.leftFile) {
         themeScript = themeScript.concat(`
             document.querySelector('img#upper').src = "${request.body.leftFile}";
