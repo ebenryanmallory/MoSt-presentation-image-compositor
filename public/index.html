@@ -7,21 +7,22 @@
         <section>
             <div class="ex1">
                 <div id="image-holder" class="parent">
-                    <h3>Create a Presentation Composite Image</h3>
+                    <h2>Create a Presentation Composite Image</h2>
                     <p>Screenshot two images of a web page, and display them side-by-side.</p>
                     <img id="result-image" src="temp/result.png" />
                 </div>
                 <br><br><hr>
                 <div class="relative container" style="max-width: 50rem;">
                     <div class="parent absolute color-container">
-                        <input class="hidden" id="left" type="file" />
-                        <label class="left" for="left">Choose image for left side:</label>
-                        <input class="hidden" id="right" type="file" />
-                        <label class="right" for="right">Choose image for right side:</label>
+                        <input class="hidden" id="left" type="file" onchange="checkFileUpload()" />
+                        <label class="left" for="left">Choose left image:</label>
+                        <input class="hidden" id="right" type="file" onchange="checkFileUpload()" />
+                        <label class="right" for="right">Choose right image:</label>
+                        <p class="hidden" id="feedback"></p>
                     </div>
                     <br><br><br><hr>
                     <div class="parent absolute color-container">
-                        <label for="url">Or use a page URL:</label>
+                        <label for="url">Snapshot from URL:</label>
                         <input id="url" type="url" placeholder="Example: www.motionstoryline.com" />
                     </div>
                 </div>
@@ -84,9 +85,45 @@
             color.classList.add('border');
             let selectedColor = color.getAttribute('data-color');
             settings['color'] = selectedColor;
+            gatherSettings();
             getImage();
         }
-
+        function gatherSettings() {
+            let snapshotURL = document.querySelector('input#url').value;
+            settings['url'] = snapshotURL;
+            settings['windowLocation'] = window.location.href;
+        }
+        function checkFileUpload() {
+            var leftFileInput = document.querySelector('input#left');
+            var rightFileInput = document.querySelector('input#right');
+            var feedback = ``;
+            if ('files' in leftFileInput) {
+                if (leftFileInput.files.length == 0 && rightFileInput.files.length == 0) { return feedback = "Select one or more files." };
+                if (leftFileInput.files.length > 0) {
+                    var leftFile = leftFileInput.files[0];
+                    if (leftFile.name) {
+                        feedback = feedback.concat(`File name: ${leftFile.name} | `);
+                    }
+                    if (leftFile.size) {
+                        feedback = feedback.concat(`File size: ${leftFile.size} | `);
+                    }
+                }
+            }
+            if ('files' in rightFileInput) {
+                if (leftFileInput.files.length == 0 && rightFileInput.files.length == 0) { return feedback = "Select one or more files." };
+                if (rightFileInput.files.length > 0) {
+                    var rightFile = rightFileInput.files[0];
+                    if (rightFile.name) {
+                        feedback = feedback.concat(`File name: ${rightFile.name} | `);
+                    }
+                    if (rightFile.size) {
+                        feedback = feedback.concat(`File size: ${rightFile.size} | `);
+                    }
+                }
+            }
+            document.querySelector('p#feedback').classList.remove('hidden');
+            document.querySelector('p#feedback').innerText = feedback;
+            }
         </script>
     </body>
 </html>

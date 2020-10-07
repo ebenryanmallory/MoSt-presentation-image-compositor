@@ -24,7 +24,7 @@ app.post("/composite-image", async (request, response) => {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
-    const url = `http://localhost:8000/composite-image-template/`;
+    const url = `${request.body.windowLocation}/composite-image-template/`;
     // Todo = url = process.env.BASEURL
     await page.goto(url, {waitUntil: 'networkidle2'});
     let themeScript = ``; // yes, I used backticks. ... Because ... I like backticks...

@@ -168,6 +168,13 @@ img {
 .hidden {
     display: none;
 }
+#image-holder {
+    min-height: 572px;
+}
+#feedback {    
+    width: 290px;
+    font-size: 9pt;
+}
 .color-container {
     display: flex !important;
     justify-content: center;
