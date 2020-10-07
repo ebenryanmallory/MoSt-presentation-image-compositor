@@ -135,6 +135,7 @@ img {
     background: plum;
     width: 100vw;
     max-height: 600px;
+    border-radius: 1rem;
 }
 .shadow {
     -webkit-box-shadow: 4px 7px 13px 0px rgba(0,0,0,0.5);

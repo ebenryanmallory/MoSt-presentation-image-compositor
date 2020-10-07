@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "docker-start": "docker run --publish 8000:8000 --detach most-composite",
-    "docker-build": "docker build --tag most-composite ."
+    "docker-build": "docker build --tag most-composite .",
+    "docker-start": "docker run --publish 8000:8000 --detach most-composite"
   },
   "repository": {
     "type" : "git",

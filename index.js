@@ -61,7 +61,7 @@ app.post("/composite-image", async (request, response) => {
     browser.close();
 });
 
-const port = process.env.PORT || 8000;
-app.listen(port, () => {
-  console.log(`App running - listening on port ${port}`);
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+  console.log(`App running - listening on port ${PORT}`);
 });
