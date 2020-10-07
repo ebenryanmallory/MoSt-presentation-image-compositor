@@ -38,11 +38,23 @@ app.post("/composite-image", async (request, response) => {
         script.setAttribute("id", "script");
         document.body.parentElement.appendChild(script);
     }, themeScript);
+    await page.setViewport({
+        width: 800,
+        height: 1000,
+      });
+    const background = await page.$('.background');
+    const boundingBox = await background.boundingBox();
     // Writes the actual file
     const screenShot = await page.screenshot({
         // We can use png transparency around the edges since we will have a rounded border
         omitBackground: true,
-        path:`public/temp/result.png`
+        path:`public/temp/result.png`,
+        clip: {
+            x: boundingBox.x,
+            y: boundingBox.y,
+            width: Math.min(boundingBox.width, page.viewport().width),
+            height: Math.min(boundingBox.height, page.viewport().height),
+          }
     });
     // Sends encoded version back to the website
     await response.send(screenShot);

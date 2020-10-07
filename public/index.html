@@ -7,9 +7,9 @@
 <section>
     <div class="ex1">
         <div class="parent">
-            <img src="temp/result.png" />
+            <img id="result-image" src="temp/result.png" />
             <div class="parent overlay">
-                <button onclick="post()">click me</button>
+                <button onclick="getImage()">click me</button>
             </div>
         </div>
     </div>
@@ -33,6 +33,7 @@ const settings = {};
 settings['color'] = '#2a3c44';
 
 async function post() {
+    console.log('post!')
     const url = '/composite-image'
     const response = await fetch(url, {
         method: 'POST',
@@ -45,10 +46,11 @@ async function post() {
     return response;
 }
 
-post()
-  .then(data => {
-    console.log(data.body);
-  });
+async function getImage() {
+    let returnedImage = await post();
+    await console.log(returnedImage);
+    document.querySelector('img#result-image').src = "temp/result.png";
+}
 
 </script>
 

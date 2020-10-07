@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "docker run --publish 8000:8000 --detach most-composite",
-    "build-local": "docker build --tag most-composite ."
+    "docker-start": "docker run --publish 8000:8000 --detach most-composite",
+    "docker-build": "docker build --tag most-composite ."
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ebenryanmallory/MoSt-presentation-image-compositor.git"
   },
   "keywords": [],
   "author": "Eben Mallory - Motion Storyline",
