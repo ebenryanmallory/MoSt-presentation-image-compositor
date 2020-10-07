@@ -4,24 +4,51 @@
     <link rel="stylesheet" href="css/style.css"> 
 </head>
 
-<div class="ex1">
-    <div class="parent">
-        <img src="temp/result.png" />
-        <div class="parent overlay">
-            <button onclick="post()">click me</button>
+<section>
+    <div class="ex1">
+        <div class="parent">
+            <img src="temp/result.png" />
+            <div class="parent overlay">
+                <button onclick="post()">click me</button>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="ex1">
+    <div class="container parent">
+        <h4>Inspiration</h4>
+        <img style="max-width:500px;" src="images/page.jpg" />
+        <div class="attribution">
+            <p>Inspiration was taken from the brilliant
+                <a href="https://dribbble.com/mikekus" target="_blank">Mike Kus</a>
+            </p>
+        </div>
+    </div>
+</section>
 
 <script>
 
+const settings = {};
+settings['color'] = '#2a3c44';
+
 async function post() {
     const url = '/composite-image'
-    fetch(url, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        // mode: 'cors', // no-cors, *cors, same-origin
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+            },
+        body: JSON.stringify(settings)
     });
+    return response;
 }
+
+post()
+  .then(data => {
+    console.log(data.body);
+  });
 
 </script>
 

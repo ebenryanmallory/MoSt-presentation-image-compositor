@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios');
 const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
 
@@ -8,6 +7,7 @@ const puppeteer = require('puppeteer');
 const app = express();
 
 app.use(cors({ origin: true }));
+app.use(bodyParser.json())
 app.use(express.static(__dirname + '/public'));
 // Point to our HTML
 app.set('view engine', 'html');
@@ -28,6 +28,9 @@ app.post("/composite-image", async (request, response) => {
     // Todo = url = process.env.BASEURL
     await page.goto(url, {waitUntil: 'networkidle2'});
     let themeScript = ``; // yes, I used backticks. ... Because ... I like backticks...
+    themeScript = themeScript.concat(`
+        document.querySelector('.background').style.background = "${request.body.color}";
+    `)
     await page.evaluate(javascript => {
         const script = document.createElement('script');
         script.type = 'text/javascript';
