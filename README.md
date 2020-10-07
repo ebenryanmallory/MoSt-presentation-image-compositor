@@ -1,7 +1,7 @@
 [![ebenryanmallory github stats](https://github-readme-stats.vercel.app/api?username=ebenryanmallory)](https://github.com/ebenryanmallory/MoSt-presentation-image-compositor.git)
 <p>
     <a href="https://motionstoryline.com">
-        <img src="https://github.com/ebenryanmallory/MoSt-presentation-image-compositor/blob/master/public/temp/result.png" />
+        <img src="https://github.com/ebenryanmallory/MoSt-presentation-image-compositor/blob/master/public/temp/result.jpg" />
     </a>
 </p>
 
