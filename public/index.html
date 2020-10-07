@@ -7,13 +7,24 @@
 <section>
     <div class="ex1">
         <div id="image-holder" class="parent">
+            <h3>Create a Presentation Composite Image</h3>
+            <p>Screenshot two images of a web page, and display them side-by-side.</p>
             <img id="result-image" src="temp/result.png" />
             <div class="parent overlay">
                 <button onclick="getImage()">click me</button>
             </div>
         </div>
+        <br><br><hr>
+        <div class="parent absolute color-container">
+            <div class="color" style="background:plum" onclick="selectColor(this)" data-color="plum"></div>
+            <div class="color" style="background:rebeccapurple" onclick="selectColor(this)" data-color="rebeccapurple"></div>
+            <div class="color" style="background:sienna" onclick="selectColor(this)" data-color="sienna"></div>
+            <div class="color" style="background:#2a3c44" onclick="selectColor(this)" data-color="#2a3c44"></div>
+        </div>
     </div>
 </section>
+
+<br><br><br><br><hr><br>
 
 <section class="ex1">
     <div class="container parent">
@@ -55,6 +66,13 @@ async function getImage() {
     updateImage.src = returnedImageURL;
     updateImage.id = "result-image";
     document.querySelector('div#image-holder').appendChild(updateImage)
+}
+
+function selectColor(color) {
+    document.querySelectorAll('.border').forEach(border => border.classList.remove('border'));
+    color.classList.add('border');
+    let selectedColor = color.getAttribute('data-color');
+    settings['color'] = selectedColor;
 }
 
 </script>

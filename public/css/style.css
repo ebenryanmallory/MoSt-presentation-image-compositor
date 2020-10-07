@@ -141,3 +141,20 @@ img {
     -moz-box-shadow: 4px 7px 13px 0px rgba(0,0,0,0.5);
     box-shadow: 4px 7px 13px 0px rgba(0,0,0,0.5);
 }
+.color {
+    height: 30px;
+    width: 90px;
+    margin: 20px;
+}
+.border {
+    border: 3px solid #333333;
+}
+.absolute {
+    position: absolute;
+}
+.color-container {
+    display: flex !important;
+    justify-content: center;
+    right: 0;
+    left: 0;
+}
