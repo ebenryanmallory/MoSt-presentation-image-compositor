@@ -57,7 +57,7 @@ app.post("/composite-image", async (request, response) => {
           }
     });
     // Sends encoded version back to the website
-    await response.send(screenShot);
+    response.send(screenShot);
     browser.close();
 });
 
