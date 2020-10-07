@@ -14,11 +14,17 @@ async function process(request) {
         height: 1000,
       });
     await page.screenshot({
-        path:`public/temp/${uid}.jpg`
+        path:`public/temp/${uid}upper.jpg`
+    });
+    await page.evaluate(async () => {
+        window.scrollBy(0, 800);
+    });
+    await page.screenshot({
+        path:`public/temp/${uid}lower.jpg`
     });
     imageURLSnaphostScript = `
-        document.querySelector('img#upper').src = "../temp/${uid}.jpg";
-        document.querySelector('img#lower').src = "../temp/${uid}.jpg";
+        document.querySelector('img#upper').src = "../temp/${uid}upper.jpg";
+        document.querySelector('img#lower').src = "../temp/${uid}lower.jpg";
     `;
     return imageURLSnaphostScript;
 }

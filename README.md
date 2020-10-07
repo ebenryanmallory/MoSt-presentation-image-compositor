@@ -3,6 +3,7 @@
     <a href="https://motionstoryline.com">
         <img src="https://github.com/ebenryanmallory/MoSt-presentation-image-compositor/blob/master/public/images/initial.png" />
     </a>
+    <img src="https://github.com/ebenryanmallory/MoSt-presentation-image-compositor/blob/master/public/images/self-portrait.png" />
 </p>
 
 ## What is the composite presentation image app?
