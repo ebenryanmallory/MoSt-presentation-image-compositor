@@ -117,6 +117,15 @@
     padding: 1rem;
     overflow: hidden;
 }
+body {
+    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    margin: 0px;
+    overflow: hidden auto;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+}
 .container {
     max-width: 1000px;
     margin: auto;
@@ -135,7 +144,7 @@ img {
     background: plum;
     width: 100vw;
     max-height: 600px;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 .shadow {
     -webkit-box-shadow: 4px 7px 13px 0px rgba(0,0,0,0.5);
@@ -153,9 +162,37 @@ img {
 .absolute {
     position: absolute;
 }
+.relative {
+    position: relative;
+}
+.hidden {
+    display: none;
+}
 .color-container {
     display: flex !important;
     justify-content: center;
     right: 0;
     left: 0;
+}
+input {
+    background: #FEFEFE;
+    width: 70%;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+input:valid {
+    background: white;
+}
+.left {
+    border: dashed 2px #333333;
+    padding: 15px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.right {
+    border: dashed 2px #333333;
+    padding: 15px;
+    margin-right: 40px;
+    margin-left: 40px;
 }

@@ -12,6 +12,20 @@
                     <img id="result-image" src="temp/result.png" />
                 </div>
                 <br><br><hr>
+                <div class="relative container" style="max-width: 50rem;">
+                    <div class="parent absolute color-container">
+                        <input class="hidden" id="left" type="file" />
+                        <label class="left" for="left">Choose image for left side:</label>
+                        <input class="hidden" id="right" type="file" />
+                        <label class="right" for="right">Choose image for right side:</label>
+                    </div>
+                    <br><br><br><hr>
+                    <div class="parent absolute color-container">
+                        <label for="url">Or use a page URL:</label>
+                        <input id="url" type="url" placeholder="Example: www.motionstoryline.com" />
+                    </div>
+                </div>
+                <br><br><hr>
                 <div class="parent absolute color-container">
                     <div class="color" style="background:plum" onclick="selectColor(this)" data-color="plum"></div>
                     <div class="color" style="background:rebeccapurple" onclick="selectColor(this)" data-color="rebeccapurple"></div>
