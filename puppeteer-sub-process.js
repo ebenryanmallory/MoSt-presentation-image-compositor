@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const crypto = require("crypto");
+
 const uid = crypto.randomBytes(16).toString("hex");
 
 async function process(request) {
