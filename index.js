@@ -8,9 +8,9 @@ const subProcessor = require('./puppeteer-sub-process.js')
 const app = express();
 
 app.use(cors({ origin: true }));
-app.use(bodyParser.json())
-app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 // Point to our HTML
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'html');
 
 // Serve our static HTML
@@ -68,6 +68,7 @@ app.post("/composite-image", async (request, response) => {
     const screenShot = await page.screenshot({
         // We can use png transparency around the edges since we will have a rounded border
         omitBackground: true,
+        // Write the file on the server
         path:`public/temp/result.png`,
         clip: {
             x: boundingBox.x,
@@ -76,12 +77,12 @@ app.post("/composite-image", async (request, response) => {
             height: Math.min(boundingBox.height, page.viewport().height),
           }
     });
-    // Sends encoded version back to the website
+    // Send encoded version back to the website
     response.send(screenShot);
     browser.close();
 });
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-  console.log(`App running - listening on port ${PORT}`);
+  console.log(`App running on port ${PORT}`);
 });

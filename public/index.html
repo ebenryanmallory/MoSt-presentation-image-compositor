@@ -1,9 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <title>Motion Storyline | Composite presentation image builder</title>
+        <meta name="description" content="Motion Storyline composite presentation image builder">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+        <script type="text/javascript">
+          (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+          ;r.type="text/javascript"
+          ;r.integrity="sha384-vYYnQ3LPdp/RkQjoKBTGSq0X5F73gXU3G2QopHaIfna0Ct1JRWzwrmEz115NzOta"
+          ;r.crossOrigin="anonymous";r.async=true
+          ;r.src="https://cdn.amplitude.com/libs/amplitude-5.8.0-min.gz.js"
+          ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+          console.log("[Amplitude] Error: could not load SDK")}}
+          ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+          ;function s(e,t){e.prototype[t]=function(){
+          this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+          var o=function(){this._q=[];return this}
+          ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+          ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+          ;return this}
+          ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+          ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+          ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId", "enableTracking", "setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+          ;function v(e){function t(t){e[t]=function(){
+          e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+          for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+          e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+          ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+          ;e.amplitude=n})(window,document);
+      
+          amplitude.getInstance().init("a7041e11050fab64ff1255cbbef72442");
+        </script>
+      
+        <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+             amplitude.getInstance().logEvent('Presentation-app-loaded');
+        });
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-157834036-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-157834036-1');
+        </script>
         <link rel="stylesheet" href="css/style.css"> 
     </head>
     <body>
+        <div class="w-full dark-bg">
+            <div class="container">
+                <p>
+                    <svg width="90" viewBox="0 0 310 106" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M101.795 94.352C101.795 95.864 101.263 97.068 100.199 97.964C99.1539 98.8413 97.5112 99.28 95.2712 99.28C94.1886 99.28 93.2366 99.2147 92.4152 99.084C91.6126 98.9533 90.8006 98.72 89.9792 98.384V94.576C90.8752 94.9867 91.8086 95.304 92.7792 95.528C93.7499 95.7333 94.5712 95.836 95.2432 95.836C95.9526 95.836 96.4659 95.7427 96.7832 95.556C97.1006 95.3693 97.2592 95.108 97.2592 94.772C97.2592 94.5293 97.1752 94.3147 97.0072 94.128C96.8579 93.9413 96.5406 93.736 96.0552 93.512C95.5886 93.2693 94.8886 92.952 93.9552 92.56C93.0406 92.168 92.2846 91.7667 91.6872 91.356C91.1086 90.9453 90.6699 90.46 90.3712 89.9C90.0912 89.3213 89.9512 88.6027 89.9512 87.744C89.9512 86.288 90.5112 85.196 91.6312 84.468C92.7699 83.7213 94.2726 83.348 96.1392 83.348C97.1286 83.348 98.0619 83.4507 98.9392 83.656C99.8166 83.8613 100.722 84.1787 101.655 84.608L100.311 87.8C99.5459 87.464 98.7992 87.1933 98.0712 86.988C97.3619 86.7827 96.7179 86.68 96.1392 86.68C95.0566 86.68 94.5152 86.96 94.5152 87.52C94.5152 87.7253 94.5899 87.9213 94.7392 88.108C94.9072 88.276 95.2152 88.4627 95.6632 88.668C96.1299 88.8733 96.8019 89.1627 97.6792 89.536C98.5566 89.8907 99.3032 90.2733 99.9192 90.684C100.535 91.076 101.002 91.5613 101.319 92.14C101.637 92.7187 101.795 93.456 101.795 94.352Z" fill="#B5BFBD"></path><path d="M112.991 95.528C113.458 95.528 113.897 95.4813 114.307 95.388C114.737 95.2947 115.166 95.1733 115.595 95.024V98.496C115.091 98.72 114.513 98.9067 113.859 99.056C113.206 99.2053 112.431 99.28 111.535 99.28C110.583 99.28 109.734 99.1307 108.987 98.832C108.259 98.5147 107.681 97.9827 107.251 97.236C106.841 96.4893 106.635 95.4347 106.635 94.072V87.156H104.675V85.196L107.027 83.684L108.315 80.436H111.339V83.628H115.427V87.156H111.339V93.904C111.339 94.4453 111.489 94.856 111.787 95.136C112.086 95.3973 112.487 95.528 112.991 95.528Z" fill="#B5BFBD"></path><path d="M133.943 91.272C133.943 93.848 133.262 95.8267 131.899 97.208C130.555 98.5893 128.707 99.28 126.355 99.28C124.899 99.28 123.602 98.972 122.463 98.356C121.343 97.7213 120.457 96.816 119.803 95.64C119.169 94.4453 118.851 92.9893 118.851 91.272C118.851 88.7333 119.523 86.7827 120.867 85.42C122.23 84.0387 124.087 83.348 126.439 83.348C127.895 83.348 129.183 83.656 130.303 84.272C131.442 84.888 132.329 85.784 132.963 86.96C133.617 88.136 133.943 89.5733 133.943 91.272ZM123.639 91.272C123.639 92.7093 123.854 93.8013 124.283 94.548C124.713 95.276 125.422 95.64 126.411 95.64C127.382 95.64 128.082 95.276 128.511 94.548C128.941 93.8013 129.155 92.7093 129.155 91.272C129.155 89.8533 128.941 88.7893 128.511 88.08C128.082 87.352 127.373 86.988 126.383 86.988C125.413 86.988 124.713 87.352 124.283 88.08C123.854 88.7893 123.639 89.8533 123.639 91.272Z" fill="#B5BFBD"></path>
+                        <path d="M147.242 83.348C147.485 83.348 147.755 83.3667 148.054 83.404C148.353 83.4227 148.586 83.4507 148.754 83.488L148.362 87.912C148.194 87.8747 147.979 87.8467 147.718 87.828C147.457 87.7907 147.167 87.772 146.85 87.772C146.253 87.772 145.655 87.8653 145.058 88.052C144.479 88.2387 143.994 88.5933 143.602 89.116C143.229 89.62 143.042 90.348 143.042 91.3V99H138.31V83.628H141.866L142.594 86.148H142.79C143.238 85.3827 143.854 84.7293 144.638 84.188C145.422 83.628 146.29 83.348 147.242 83.348Z" fill="#B5BFBD"></path>
+                        <path d="M150.32 83.628H155.36L158.132 92.336C158.226 92.6533 158.3 93.008 158.356 93.4C158.431 93.7733 158.487 94.156 158.524 94.548H158.608C158.664 94.1187 158.73 93.7267 158.804 93.372C158.898 92.9987 158.991 92.6627 159.084 92.364L161.856 83.628H166.784L160.456 100.512C159.822 102.229 158.954 103.527 157.852 104.404C156.751 105.281 155.342 105.72 153.624 105.72C153.139 105.72 152.719 105.692 152.364 105.636C152.028 105.599 151.73 105.552 151.468 105.496V101.772C151.674 101.809 151.916 101.847 152.196 101.884C152.495 101.921 152.803 101.94 153.12 101.94C153.998 101.94 154.67 101.679 155.136 101.156C155.603 100.633 155.967 100.017 156.228 99.308L156.396 98.832L150.32 83.628Z" fill="#B5BFBD"></path>
+                        <path d="M174.649 99H169.917V77.72H174.649V99Z" fill="#B5BFBD"></path>
+                        <path d="M182.223 77.524C182.895 77.524 183.483 77.6733 183.987 77.972C184.491 78.2707 184.743 78.8493 184.743 79.708C184.743 80.548 184.491 81.1267 183.987 81.444C183.483 81.7427 182.895 81.892 182.223 81.892C181.513 81.892 180.907 81.7427 180.403 81.444C179.917 81.1267 179.675 80.548 179.675 79.708C179.675 78.8493 179.917 78.2707 180.403 77.972C180.907 77.6733 181.513 77.524 182.223 77.524ZM184.547 83.628V99H179.843V83.628H184.547Z" fill="#B5BFBD"></path>
+                        <path d="M198.895 83.348C200.519 83.348 201.826 83.796 202.815 84.692C203.823 85.5693 204.327 86.9973 204.327 88.976V99H199.623V90.292C199.623 89.228 199.446 88.4253 199.091 87.884C198.737 87.3427 198.177 87.072 197.411 87.072C196.273 87.072 195.498 87.5013 195.087 88.36C194.677 89.2 194.471 90.4133 194.471 92V99H189.739V83.628H193.323L193.967 85.616H194.191C194.677 84.8693 195.33 84.3093 196.151 83.936C196.973 83.544 197.887 83.348 198.895 83.348Z" fill="#B5BFBD"></path>
+                        <path d="M216.062 83.348C218.227 83.348 219.944 83.9453 221.214 85.14C222.483 86.316 223.118 88.052 223.118 90.348V92.532H213.402C213.439 93.54 213.766 94.3427 214.382 94.94C214.998 95.5373 215.875 95.836 217.014 95.836C217.984 95.836 218.871 95.7427 219.674 95.556C220.495 95.3693 221.335 95.0707 222.194 94.66V98.16C221.428 98.552 220.616 98.832 219.758 99C218.918 99.1867 217.872 99.28 216.622 99.28C215.072 99.28 213.691 99 212.478 98.44C211.283 97.88 210.34 97.0213 209.65 95.864C208.978 94.688 208.642 93.204 208.642 91.412C208.642 89.6013 208.95 88.0987 209.566 86.904C210.182 85.7093 211.04 84.8227 212.142 84.244C213.262 83.6467 214.568 83.348 216.062 83.348ZM216.146 86.624C215.418 86.624 214.811 86.8573 214.326 87.324C213.859 87.772 213.579 88.4907 213.486 89.48H218.778C218.759 88.6773 218.535 88.0053 218.106 87.464C217.676 86.904 217.023 86.624 216.146 86.624Z" fill="#B5BFBD"></path>
+                        <path d="M266 4V51.5" stroke="#4E6785" stroke-width="3"></path>
+                        <path d="M263.889 2.26086L308 50" stroke="#4E6785" stroke-width="3"></path>
+                        <path d="M306 1L306 48" stroke="#4E6785" stroke-width="3"></path>
+                        <path d="M184 1V50.5" stroke="#738699" stroke-width="3"></path>
+                        <path d="M144 1V50.5" stroke="#91A0AA" stroke-width="3"></path>
+                        <path d="M143 2L164 2" stroke="#91A0AA" stroke-width="3"></path>
+                        <path d="M124.5 27C124.5 40.531 113.531 51.5 100 51.5C93.8744 51.5 88.2772 49.2539 83.9812 45.5383C83.0818 44.7604 82.2396 43.9182 81.4617 43.0187C77.7461 38.7228 75.5 33.1256 75.5 27C75.5 13.469 86.469 2.5 100 2.5C113.531 2.5 124.5 13.469 124.5 27Z" stroke="#B5BFBD" stroke-width="3"></path>
+                        <path d="M79.5 50H100V53H76.5L79.5 50Z" fill="#B5BFBD"></path>
+                        <path d="M77 47.5L77 27L74 27L74 50.5L77 47.5Z" fill="#B5BFBD"></path>
+                        <path d="M201.5 27C201.5 40.531 212.469 51.5 226 51.5C232.126 51.5 237.723 49.2539 242.019 45.5383C242.918 44.7604 243.76 43.9182 244.538 43.0187C248.254 38.7228 250.5 33.1256 250.5 27C250.5 13.469 239.531 2.5 226 2.5C212.469 2.5 201.5 13.469 201.5 27Z" stroke="#738699" stroke-width="3"></path>
+                        <path d="M246.5 50H226V53H249.5L246.5 50Z" fill="#738699"></path>
+                        <path d="M249 47.5L249 27L252 27L252 50.5L249 47.5Z" fill="#738699"></path>
+                        <path d="M1.88892 2.26086L32 26" stroke="#B5BFBD" stroke-width="3"></path><path d="M4 4V51.5" stroke="#B5BFBD" stroke-width="3"></path><path d="M60.1111 2.26086L30 26" stroke="#B5BFBD" stroke-width="3"></path><path d="M58.0001 4V51.5" stroke="#B5BFBD" stroke-width="3"></path><rect width="2" height="51" transform="matrix(-1 0 0 1 309 1)" fill="#333333"></rect><rect x="263" y="1" width="2" height="51" fill="#333333"></rect><rect width="2" height="51" transform="matrix(-1 0 0 1 61 1)" fill="#333333"></rect><rect x="1" y="1" width="2" height="51" fill="#333333"></rect>
+                    </svg>
+                    <span class="topbar">
+                        presents:
+                    </span>
+                </p>
+            </div>
+        </div>
         <section>
             <div class="ex1">
                 <div id="image-holder" class="parent">
@@ -11,37 +87,61 @@
                     <p>Screenshot two images of a web page, and display them side-by-side.</p>
                     <img id="result-image" src="images/initial.png" />
                 </div>
-                <br><br><hr>
+                <br>
                 <div class="relative container" style="max-width: 50rem;">
-                    <div class="parent absolute color-container">
+                    <div class="parent absolute overlay-container">
                         <input class="hidden" id="left" type="file" onchange="checkFileUpload()" />
-                        <label class="left" for="left">Choose left image:</label>
+                        <label class="left upload" for="left">Choose left image:</label>
                         <input class="hidden" id="right" type="file" onchange="checkFileUpload()" />
-                        <label class="right" for="right">Choose right image:</label>
+                        <label class="right upload" for="right">Choose right image:</label>
                         <p class="hidden" id="feedback"></p>
                     </div>
                     <br><br><br><hr>
-                    <div class="parent absolute color-container">
+                    <div class="parent absolute overlay-container">
                         <label for="url">Or snapshot from URL:</label>
                         <input id="url" type="url" placeholder="Example: www.motionstoryline.com" />
                     </div>
                 </div>
                 <br><br><hr>
-                <div class="parent absolute color-container">
+                <div class="parent absolute overlay-container">
                     <div class="color" style="background:plum" onclick="selectColor(this)" data-color="plum"></div>
                     <div class="color" style="background:rebeccapurple" onclick="selectColor(this)" data-color="rebeccapurple"></div>
                     <div class="color" style="background:sienna" onclick="selectColor(this)" data-color="sienna"></div>
                     <div class="color" style="background:#2a3c44" onclick="selectColor(this)" data-color="#2a3c44"></div>
+                    <label for="colorpicker" class="color colorpicker" style="background:#2a3c44"></label>
+                    <input id="colorpicker" data-color="custom" class="invisible" value="#2a3c44" type="color" onchange="selectColor(this)"/>
+                </div>
+                <br><br><br><br><hr><br><br>
+                <div class="parent absolute overlay-container">
+                    <a href="/temp/result.png" download>Download image</a>
                 </div>
             </div>
         </section>
 
-        <br><br><br><br><hr><br>
+        <br><br><br><br>
 
+        <div class="w-full dark-bg">
+            <div class="container">
+                <p>This app is an open source project on 
+                    <span style="padding-left: 10px;">
+                        <a href="https://github.com/ebenryanmallory/MoSt-presentation-image-compositor" target="_blank">
+                            <svg width="20px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>GitHub-Mark</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="GitHub-Mark" transform="translate(-136.000000, -331.000000)" fill="#FFFFFF">
+                                        <path d="M152.608,331.455 C143.614,331.455 136.32,338.748 136.32,347.745 C136.32,354.942 140.987,361.047 147.46,363.201 C148.275,363.351 148.572,362.848 148.572,362.416 C148.572,362.029 148.558,361.005 148.55,359.646 C144.019,360.63 143.063,357.462 143.063,357.462 C142.322,355.58 141.254,355.079 141.254,355.079 C139.775,354.069 141.366,354.089 141.366,354.089 C143.001,354.204 143.861,355.768 143.861,355.768 C145.314,358.257 147.674,357.538 148.602,357.121 C148.75,356.069 149.171,355.351 149.636,354.944 C146.019,354.533 142.216,353.135 142.216,346.893 C142.216,345.115 142.851,343.66 143.893,342.522 C143.725,342.11 143.166,340.453 144.053,338.211 C144.053,338.211 145.42,337.773 148.532,339.881 C149.831,339.519 151.225,339.339 152.61,339.332 C153.994,339.339 155.387,339.519 156.688,339.881 C159.798,337.773 161.163,338.211 161.163,338.211 C162.052,340.453 161.493,342.11 161.326,342.522 C162.37,343.66 163,345.115 163,346.893 C163,353.151 159.191,354.528 155.563,354.931 C156.147,355.434 156.668,356.428 156.668,357.947 C156.668,360.125 156.648,361.882 156.648,362.416 C156.648,362.852 156.942,363.359 157.768,363.2 C164.236,361.041 168.899,354.94 168.899,347.745 C168.899,338.748 161.605,331.455 152.608,331.455" id="Fill-50"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </span>
+                </p>
+            </div>
+        </div>
         <section class="ex1">
             <div class="container parent">
-                <h4>Inspiration</h4>
-                <img style="max-width:500px;" src="images/page.jpg" />
+                <h2>Inspiration</h2>
+                <img style="width:500px;" src="images/page.jpg" />
                 <div class="attribution">
                     <p>Inspiration was taken from the brilliant
                         <a href="https://dribbble.com/mikekus" target="_blank">Mike Kus</a>

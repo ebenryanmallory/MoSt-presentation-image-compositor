@@ -26,10 +26,14 @@ async function getImage() {
     document.querySelector('div#image-holder').appendChild(updateImage)
 }
 
-function selectColor(color) {
+function selectColor(colorSource) {
     document.querySelectorAll('.border').forEach(border => border.classList.remove('border'));
-    color.classList.add('border');
-    let selectedColor = color.getAttribute('data-color');
+    colorSource.classList.add('border');
+    let selectedColor = colorSource.getAttribute('data-color');
+    if (selectedColor === 'custom') { 
+        selectedColor = colorSource.value;
+        document.querySelector('.colorpicker').style.background = colorSource.value;
+    };
     settings['color'] = selectedColor;
     gatherSettings();
     getImage();

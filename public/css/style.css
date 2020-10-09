@@ -8,7 +8,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: -1rem;
 }
 .ex2 .box {
     flex: 1 1 150px; /*  Stretching: */
@@ -85,9 +88,6 @@
     justify-content: space-between;
     overflow: hidden;
 }
-.ex8 h3 {
-    margin: 0
-}
 .ex9 .parent {
     display: grid;
     place-items: center;
@@ -130,8 +130,21 @@ body {
     max-width: 1000px;
     margin: auto;
 }
+a {
+    text-decoration: none;
+    color: #333333;
+}
 img {
     max-width: 100%;
+}
+svg {
+    vertical-align: middle;
+}
+.dark-bg {
+    background: #333333;
+    color: whitesmoke;
+    padding: 1px;
+    margin-bottom: 20px;
 }
 .overlay {
     position: absolute;
@@ -156,6 +169,12 @@ img {
     width: 90px;
     margin: 20px;
 }
+.topbar {
+    padding-left: 10px; 
+    font-size: 14px; 
+    color: #6b6b6b;
+    text-transform: uppercase;
+}
 .border {
     border: 3px solid #333333;
 }
@@ -168,6 +187,9 @@ img {
 .hidden {
     display: none;
 }
+.invisible {
+    opacity: 0;
+}
 #image-holder {
     min-height: 572px;
 }
@@ -175,7 +197,7 @@ img {
     width: 290px;
     font-size: 9pt;
 }
-.color-container {
+.overlay-container {
     display: flex !important;
     justify-content: center;
     right: 0;
@@ -191,15 +213,25 @@ input {
 input:valid {
     background: white;
 }
-.left {
-    border: dashed 2px #333333;
-    padding: 15px;
-    margin-right: 40px;
-    margin-left: 40px;
+input[type=color] {
+    width: 0px;
+    margin-left: -90px;
 }
-.right {
+.colorpicker:hover {
+    cursor: url(colorize-24px.svg),auto;
+}
+.colorpicker::after {
+    content: 'custom';
+    position: absolute;
+    top: 50px;
+    width: 90px;
+    font-size: 13px;
+    text-align: center;
+}
+.upload {
     border: dashed 2px #333333;
     padding: 15px;
     margin-right: 40px;
     margin-left: 40px;
+    cursor: pointer;
 }
