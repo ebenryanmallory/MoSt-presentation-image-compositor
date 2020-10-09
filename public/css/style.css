@@ -10,8 +10,6 @@
     justify-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: -1rem;
 }
 .ex2 .box {
     flex: 1 1 150px; /*  Stretching: */
@@ -129,6 +127,8 @@ body {
 .container {
     max-width: 1000px;
     margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 a {
     text-decoration: none;
@@ -229,7 +229,7 @@ input:valid {
 input[type=color] {
     width: 0px;
     position: absolute;
-    right: 260px;
+    right: 40%;
 }
 .colorpicker:hover {
     cursor: url(colorize-24px.svg)10 15, pointer;
