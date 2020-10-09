@@ -68,7 +68,7 @@ app.post("/composite-image", async (request, response) => {
     const screenShot = await page.screenshot({
         // We can use png transparency around the edges since we will have a rounded border
         omitBackground: true,
-        // Write the file on the server
+        // Write the file on the server side into the static assets folder
         path:`public/temp/result.png`,
         clip: {
             x: boundingBox.x,

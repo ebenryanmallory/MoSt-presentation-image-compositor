@@ -144,7 +144,6 @@ svg {
     background: #333333;
     color: whitesmoke;
     padding: 1px;
-    margin-bottom: 20px;
 }
 .overlay {
     position: absolute;
@@ -190,6 +189,9 @@ svg {
 .invisible {
     opacity: 0;
 }
+.mb-5 {
+    margin-bottom: 1.25rem;
+}
 #image-holder {
     min-height: 572px;
 }
@@ -234,4 +236,16 @@ input[type=color] {
     margin-right: 40px;
     margin-left: 40px;
     cursor: pointer;
+}
+.footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+.footer svg {
+    fill:whitesmoke;
+    width: 16px;
+}
+.footer span {
+vertical-align: middle;
 }
