@@ -61,10 +61,10 @@ function checkFileUpload() {
                 console.log(leftReader.error);
             };
             if (leftFile.name) {
-                feedback = feedback.concat(`File name: ${leftFile.name} | `);
+                feedback = feedback.concat(`Left image: ${leftFile.name} `);
             }
             if (leftFile.size) {
-                feedback = feedback.concat(`File size: ${leftFile.size} | `);
+                feedback = feedback.concat(`Image size: ${leftFile.size}`);
             }
         }
     }
@@ -82,10 +82,10 @@ function checkFileUpload() {
                 console.log(rightReader.error);
             };
             if (rightFile.name) {
-                feedback = feedback.concat(`File name: ${rightFile.name} | `);
+                feedback = feedback.concat(`Right image: ${rightFile.name} `);
             }
             if (rightFile.size) {
-                feedback = feedback.concat(`File size: ${rightFile.size} | `);
+                feedback = feedback.concat(`Image size: ${rightFile.size}`);
             }
         }
     }
