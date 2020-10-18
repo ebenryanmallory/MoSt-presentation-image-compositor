@@ -5,14 +5,13 @@ const uid = crypto.randomBytes(16).toString("hex");
 
 async function process(request) {
     const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: true
     });
     const page = await browser.newPage();
-    await page.goto(request.body.url, {waitUntil: 'networkidle2'});
+    await page.goto(request.body.url, {waitUntil: 'networkidle0'});
     await page.setViewport({
-        width: 800,
-        height: 1000,
+        width: 961,
+        height: 1100,
       });
     await page.screenshot({
         path:`public/temp/${uid}upper.jpg`

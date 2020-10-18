@@ -38,57 +38,61 @@ function selectColor(colorSource) {
     gatherSettings();
     getImage();
 }
+
+function toggleDownloadOptions() {
+    document.querySelector('.dropdown').classList.toggle('hidden');
+}
+
 function gatherSettings() {
     let snapshotURL = document.querySelector('input#url').value;
     settings['url'] = snapshotURL;
     settings['windowLocation'] = window.location.href;
 }
+
 function checkFileUpload() {
     var leftFileInput = document.querySelector('input#left');
     var rightFileInput = document.querySelector('input#right');
-    var feedback = ``;
+    var file_info = ``;
     if ('files' in leftFileInput) {
-        if (leftFileInput.files.length == 0 && rightFileInput.files.length == 0) { return feedback = "Select one or more files." };
+        if (leftFileInput.files.length == 0 && rightFileInput.files.length == 0) { return file_info = "Select one or more files." };
         if (leftFileInput.files.length > 0) {
             var leftFile = leftFileInput.files[0];
             let leftReader = new FileReader();
             leftReader.readAsDataURL(leftFile);
             leftReader.onload = function() {
-                console.log(leftReader.result);
                 settings['leftFile'] = leftReader.result;
             };
             leftReader.onerror = function() {
-                console.log(leftReader.error);
+                file_info = file_info.concat(`Please try again. The following error has occured: ${leftReader.error}`);
             };
             if (leftFile.name) {
-                feedback = feedback.concat(`Left image: ${leftFile.name} `);
+                file_info = file_info.concat(`Left image: ${leftFile.name} `);
             }
             if (leftFile.size) {
-                feedback = feedback.concat(`Image size: ${leftFile.size}`);
+                file_info = file_info.concat(`Image size: ${leftFile.size}`);
             }
         }
     }
     if ('files' in rightFileInput) {
-        if (leftFileInput.files.length == 0 && rightFileInput.files.length == 0) { return feedback = "Select one or more files." };
+        if (leftFileInput.files.length == 0 && rightFileInput.files.length == 0) { return file_info = "Select one or more files." };
         if (rightFileInput.files.length > 0) {
             var rightFile = rightFileInput.files[0];
             let rightReader = new FileReader();
             rightReader.readAsDataURL(rightFile);
             rightReader.onload = function() {
-                console.log(rightReader.result);
                 settings['rightFile'] = rightReader.result;
             };
             rightReader.onerror = function() {
-                console.log(rightReader.error);
+                file_info = file_info.concat(`Please try again. The following error has occured: ${rightReader.error}`);
             };
             if (rightFile.name) {
-                feedback = feedback.concat(`Right image: ${rightFile.name} `);
+                file_info = file_info.concat(`Right image: ${rightFile.name} `);
             }
             if (rightFile.size) {
-                feedback = feedback.concat(`Image size: ${rightFile.size}`);
+                file_info = file_info.concat(`Image size: ${rightFile.size}`);
             }
         }
     }
-    document.querySelector('p#feedback').classList.remove('hidden');
-    document.querySelector('p#feedback').innerText = feedback;
+    document.querySelector('p#file_info').classList.remove('hidden');
+    document.querySelector('p#file_info').innerText = file_info;
 }

@@ -94,12 +94,12 @@
                         <label class="left upload_button" for="left">Choose left image:</label>
                         <input class="hidden" id="right" type="file" onchange="checkFileUpload()" />
                         <label class="right upload_button" for="right">Choose right image:</label>
-                        <p class="hidden" id="feedback"></p>
+                        <p class="hidden" id="file_info"></p>
                     </div>
                     <br><br><br><br><br><hr>
                     <div class="parent absolute overlay-container">
                         <label for="url">Or snapshot from URL:</label>
-                        <input id="url" type="url" placeholder="Example: https://motionstoryline.com (must include http)" />
+                        <input id="url" type="url" value="" placeholder="Example: https://motionstoryline.com (must be full url)" onfocus="this.placeholder=''" onblur="this.placeholder=`Example: https:\/\/motionstoryline.com (must begin with http)`" />
                     </div>
                 </div>
                 <br><br><br><br><hr>
@@ -116,6 +116,14 @@
                 <br><br><br><br><hr><br>
                 <div class="parent absolute overlay-container">
                     <a href="/temp/result.png" download>Download image</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleDownloadOptions()" style="cursor: pointer;" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <div class="hidden dropdown">
+                        <ul>
+                            <li>
+                                <a href="/temp/result.jpg" download>Download JPEG</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <br>
             </div>

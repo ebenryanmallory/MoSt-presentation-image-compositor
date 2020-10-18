@@ -130,12 +130,20 @@ body {
     padding-right: 15px;
     padding-left: 15px;
 }
+h2 {
+    font-size: 2.6rem;
+}
+li {
+    list-style: none;
+}
 a {
     text-decoration: none;
     color: #333333;
 }
 a[download] {
     padding: 1rem 3rem 1rem 3rem;
+    border: 1px solid #efefef;
+    border-radius: .3rem;
 }
 a[download]:hover {
     border: 1px solid #333333;
@@ -238,9 +246,14 @@ input[type=color] {
     content: '[ custom ]';
     position: absolute;
     top: 55px;
-    width: 90px;
+    width: 95px;
     font-size: 13px;
     text-align: center;
+}
+@media screen and (max-width: 875px) {
+    .colorpicker::after {
+        content: '';
+    }
 }
 .upload_button {
     border: dashed 2px #333333;

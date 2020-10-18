@@ -21,28 +21,32 @@ app.get('/', (request, response) => {
 // POST API endpoint
 app.post("/composite-image", async (request, response) => {
     const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: true
     });
     const page = await browser.newPage();
-    const url = `${request.body.windowLocation}/composite-image-template/`;
-    // Todo = url = process.env.BASEURL
-    await page.goto(url, {waitUntil: 'networkidle2'});
-    let themeScript = ``; // yes, I used backticks. ... Because ... I like backticks...
-    themeScript = themeScript.concat(`
+    const templateURL = `${request.body.windowLocation}/composite-image-template/`;
+    if (process.env.BASEURL) {
+        templateURL = `${process.env.BASEURL}/composite-image-template/`;
+    }
+    await page.goto(templateURL, {waitUntil: 'networkidle2'});
+    let injectedPageScript = ``;
+    injectedPageScript = injectedPageScript.concat(`
         document.querySelector('.background').style.background = "${request.body.color}";
     `)
+    // User experience consideration: image uploads will override a snapshot URL
+    // If user has gone to the trouble of uploading an image, it gets priority
+    // UI is simplified as no confirmation or settings are created, although this is based on assumption
     if (request.body.url) {
         imageURLSnaphostScript = await subProcessor.process(request);
-        themeScript = themeScript.concat(imageURLSnaphostScript);
+        injectedPageScript = injectedPageScript.concat(imageURLSnaphostScript);
     }
     if (request.body.leftFile) {
-        themeScript = themeScript.concat(`
+        injectedPageScript = injectedPageScript.concat(`
             document.querySelector('img#upper').src = "${request.body.leftFile}";
         `)
     }
     if (request.body.rightFile) {
-        themeScript = themeScript.concat(`
+        injectedPageScript = injectedPageScript.concat(`
             document.querySelector('img#lower').src = "${request.body.rightFile}";
         `)
     }
@@ -52,11 +56,11 @@ app.post("/composite-image", async (request, response) => {
         script.textContent = javascript;
         script.setAttribute("id", "script");
         document.body.parentElement.appendChild(script);
-    }, themeScript);
+    }, injectedPageScript);
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
-    // Extra time padding for remote images to load in
+    // Extra time padding for remote images to load in [ TODO: poll image load completion ]
     await sleep(1000);
     await page.setViewport({
         width: 800,
@@ -70,6 +74,16 @@ app.post("/composite-image", async (request, response) => {
         omitBackground: true,
         // Write the file on the server side into the static assets folder
         path:`public/temp/result.png`,
+        clip: {
+            x: boundingBox.x,
+            y: boundingBox.y,
+            width: Math.min(boundingBox.width, page.viewport().width),
+            height: Math.min(boundingBox.height, page.viewport().height),
+          }
+    });
+    await page.screenshot({
+        // Repeat and write JPEG version of file (won't have transparency around edges)
+        path:`public/temp/result.jpg`,
         clip: {
             x: boundingBox.x,
             y: boundingBox.y,
