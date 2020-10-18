@@ -42,6 +42,15 @@ To run your docker container locally:
 yarn docker-start
 ```
 
+Although the image compositor should run correctly if it is deployed to a custom domain, you can specify the domain in the .env file for more control. You will need to install and configure dotenv for Node.
+
+```# with npm 
+npm install dotenv
+ 
+# or with Yarn 
+yarn add dotenv
+```
+
 ## License
 
 [MIT](LICENSE)
