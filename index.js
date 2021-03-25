@@ -20,7 +20,7 @@ app.get('/', (request, response) => {
 
 // POST API endpoint
 app.post("/composite-image", async (request, response) => {
-    console.log('lanching puppeteer')
+    console.log('launching puppeteer')
     const browser = await puppeteer.launch({
         headless: true
     });
