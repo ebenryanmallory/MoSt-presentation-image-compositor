@@ -27,7 +27,7 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
 
 COPY package*.json ./
 
-RUN npm install --only=production
+RUN yarn
 
 COPY . ./
 
