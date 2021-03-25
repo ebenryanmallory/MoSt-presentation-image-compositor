@@ -13,7 +13,7 @@
     "url" : "https://github.com/ebenryanmallory/MoSt-presentation-image-compositor.git"
   },
   "keywords": [],
-  "author": "Eben Mallory - Motion Storyline",
+  "author": "Eben Mallory",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
