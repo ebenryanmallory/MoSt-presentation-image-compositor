@@ -34,4 +34,4 @@ COPY . ./
 # Run everything after as non-privileged user.
 USER pptruser
 
-RUN yarn start
+CMD [ "yarn", "start" ]
