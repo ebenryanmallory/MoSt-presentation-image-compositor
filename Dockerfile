@@ -30,4 +30,4 @@ USER pptruser
 
 RUN yarn
 
-RUN yarn start
+RUN npm run start
