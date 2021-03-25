@@ -25,7 +25,6 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 
 COPY . ./
 
-# Run everything after as non-privileged user.
 USER pptruser
 
 CMD [ "npm", "start" ]
