@@ -25,9 +25,13 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /app
 
+COPY package*.json ./
+
+RUN npm install --only=production
+
+COPY . ./
+
 # Run everything after as non-privileged user.
 USER pptruser
 
-RUN yarn
-
-RUN node index.js
+RUN yarn start
