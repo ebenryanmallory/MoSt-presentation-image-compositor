@@ -29,7 +29,6 @@ app.post("/composite-image", async (request, response) => {
     if (process.env.BASEURL) {
         templateURL = `${process.env.BASEURL}/composite-image-template/`;
     }
-    console.log(process.env.BASEURL)
     console.log(templateURL)
     await page.goto(templateURL, {waitUntil: 'networkidle2'});
     let injectedPageScript = ``;

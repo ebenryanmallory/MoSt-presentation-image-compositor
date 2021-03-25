@@ -19,6 +19,12 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 # Puppeteer v6.0.0 works with Chromium 89.
 RUN yarn add puppeteer@6.0.0
 
+COPY package*.json ./
+
+RUN yarn
+
+COPY . ./
+
 # Add user so we don't need --no-sandbox.
 RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
     && mkdir -p /home/pptruser/Downloads /app \
@@ -26,13 +32,7 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
     && chown -R pptruser:pptruser /app \
     && chown -R pptruser:pptruser /app/public/temp/ \
     && chown -R pptruser:pptruser ./public/temp/
-
-COPY package*.json ./
-
-RUN yarn
-
-COPY . ./
-
+    
 # Run everything after as non-privileged user.
 USER pptruser
 
