@@ -30,4 +30,4 @@ USER pptruser
 
 RUN yarn
 
-RUN npm run start
+RUN node index.js
