@@ -20,6 +20,7 @@ app.get('/', (request, response) => {
 
 // POST API endpoint
 app.post("/composite-image", async (request, response) => {
+    console.log('lanching puppeteer')
     const browser = await puppeteer.launch({
         headless: true
     });
@@ -28,6 +29,8 @@ app.post("/composite-image", async (request, response) => {
     if (process.env.BASEURL) {
         templateURL = `${process.env.BASEURL}/composite-image-template/`;
     }
+    console.log(process.env.BASEURL)
+    console.log(templateURL)
     await page.goto(templateURL, {waitUntil: 'networkidle2'});
     let injectedPageScript = ``;
     injectedPageScript = injectedPageScript.concat(`
@@ -91,6 +94,7 @@ app.post("/composite-image", async (request, response) => {
             height: Math.min(boundingBox.height, page.viewport().height),
           }
     });
+    console.log('screenshots have been written')
     // Send encoded version back to the website
     response.send(screenShot);
     browser.close();

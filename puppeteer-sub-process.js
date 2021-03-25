@@ -4,6 +4,7 @@ const crypto = require("crypto");
 const uid = crypto.randomBytes(16).toString("hex");
 
 async function process(request) {
+    console.log('launching subprocess puppeteer')
     const browser = await puppeteer.launch({
         headless: true
     });
